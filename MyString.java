@@ -39,13 +39,13 @@ public class MyString {
      */
     public static boolean contains(String str1, String str2) {
         boolean bool = false;
-        str1 = lowerCase(str1);
-        str2 = lowerCase(str2);
+        //str1 = lowerCase(str1);
+        //str2 = lowerCase(str2);
         if (str2.length() > str1.length()) {
             return false;
         }
         if (str2.length() == 0) {
-            return false;
+            return true;
         }
         int index = 0;
         String subStr = "";
