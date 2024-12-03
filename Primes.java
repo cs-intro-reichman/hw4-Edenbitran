@@ -9,13 +9,13 @@ public class Primes {
             if (i > 1) {
                 bool[i] = true;
             }
-            //System.out.printf("%8s", bool[i]);
+            System.out.printf("%8s", bool[i]);
         }
-        //System.out.println();
-        for (int i = 3; i < lim; i++) {
-            while (i % j == 0) {
+        System.out.println();
+        for (int i = 2; i <= bool.length; i++) {
+            while (i % j == 0 && i > j) {
                 bool[i] = false;
-                //System.out.println(bool[i]);
+                System.out.println(bool[i]);
                 break;
             }
             if (i + 1 == lim) {
@@ -23,30 +23,18 @@ public class Primes {
                 i = j + 1;
             }
         }
-        int countP = 0;
-        for (int i = 0; i < lim; i++) {
-            //System.out.printf("%8s", bool[i]);
+
+        double countP = 0;
+        for (int i = 0; i < bool.length; i++) {
+            System.out.printf("%8s", bool[i]);
             if (bool[i] == true) {
                 countP++;
             }
         }
-        System.out.println("There are " + countP + " primes between 2 and " + lim);
+
+        double presentage = (countP / lim) * 100;
+        System.out.println();
+        System.out.println("Prime numbers up to " + lim + ":");
+        System.out.println("There are " + (int) countP + " primes between 2 and " + lim + " (" + (int) presentage + "% are primes)");
     }
 }
-//  if ((j % index == 0) && (j > index)) {
-//                 bool[index] = false;
-//             }
-//             System.out.println(bool[index]);
-// while (p < lim) {
-//     if (j % index == 0) {
-//         bool[j] = false;
-//     }
-//     System.out.println(bool[j]);
-//     if (j + 1 == lim) {
-//         while (bool[j] == true) {
-//             p = j;
-//             index = j;
-//             j = index + 1;
-//         }
-//     }
-        // }
