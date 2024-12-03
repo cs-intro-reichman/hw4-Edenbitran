@@ -9,13 +9,13 @@ public class Primes {
             if (i > 1) {
                 bool[i] = true;
             }
-            System.out.printf("%8s", bool[i]);
+            // System.out.printf("%8s", bool[i]);
         }
         System.out.println();
         for (int i = 2; i <= bool.length; i++) {
             while (i % j == 0 && i > j) {
                 bool[i] = false;
-                System.out.println(bool[i]);
+                //System.out.println(bool[i]);
                 break;
             }
             if (i + 1 == lim) {
