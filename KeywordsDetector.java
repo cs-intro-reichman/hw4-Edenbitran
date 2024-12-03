@@ -1,4 +1,6 @@
+
 public class KeywordsDetector {
+
     public static void main(String[] args) {
         String[] sentences = {
             "Our product will transform the market",
@@ -22,5 +24,7 @@ public class KeywordsDetector {
     // If a sentence contains one or more of the kewords, prints it.
     public static void detectAndPrint(String[] sentences, String[] keywords) {
         // Replace this comment with your code
+        System.out.println("there " + sentences.length + " arrays of string");
+        System.out.println(sentences[0].contains(keywords[3]));
     }
 }
