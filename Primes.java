@@ -35,6 +35,6 @@ public class Primes {
         double presentage = (countP / lim) * 100;
         System.out.println();
         System.out.println("Prime numbers up to " + lim + ":");
-        System.out.println("There are " + (int) countP + " primes between 2 and " + lim + " (" + (int) presentage + "% are primes)");
+        System.out.println("There are " + (int) countP + " primes between 2 and " + lim + " (" + (int) presentage + "% are primes) ");
     }
 }
