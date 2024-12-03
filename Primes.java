@@ -26,7 +26,7 @@ public class Primes {
 
         double countP = 0;
         for (int i = 0; i < bool.length; i++) {
-            System.out.printf("%8s", bool[i]);
+            // System.out.printf("%8s", bool[i]);
             if (bool[i] == true) {
                 countP++;
             }
