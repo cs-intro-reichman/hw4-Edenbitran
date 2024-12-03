@@ -4,22 +4,19 @@
 public class ArrCharOps {
 
     public static void main(String[] args) {
-        String str = "clearly";
-        char[] arr1 = {'c', 'l', 'e', 'a', 'r', 'l', 'y'};
-        char[] arr2 = {'U', 'n', 'd', 'e', 'r', 's', 't', 'o', 'o', 'd'};
-        System.out.println(str); // Prints the string
-        println(arr1); // Prints an array of characters
-        System.out.println(charAt(arr1, 2));
+        // String str = "clearly";
+        // char[] arr1 = {'c', 'l', 'e', 'a', 'r', 'l', 'y'};
+        // char[] arr2 = {'U', 'n', 'd', 'e', 'r', 's', 't', 'o', 'o', 'd'};
+        // System.out.println(str); // Prints the string
+        // println(arr1); // Prints an array of characters
+        // System.out.println(charAt(arr1, 2));
 
-        System.out.println(equals(arr1, arr1));
-        System.out.println(indexOf(arr1, 'l'));
-        System.out.println(indexOf(arr1, 'l', 3));
-        System.out.println(lastIndexOf(arr1, 'l'));
-        System.out.println(concat(arr1, arr2));
-        System.out.println(subArray(arr2, 2, 9));
-        char[] arr12 = "lemon".toCharArray();
-        // System.out.println(hashCode(arr12));
-
+        // System.out.println(equals(arr1, arr1));
+        // System.out.println(indexOf(arr1, 'l'));
+        // System.out.println(indexOf(arr1, 'l', 3));
+        // System.out.println(lastIndexOf(arr1, 'l'));
+        //System.out.println(concat(arr1, arr2));
+        // System.out.println(subArray(arr2, 2, 9));
         System.out.println(compareTo("abcd", "abcd"));
         //System.out.println(compareTo("abc", "abcd"));
         System.out.println(compareTo("abw", "abcd"));
@@ -29,6 +26,18 @@ public class ArrCharOps {
         //     System.out.println(compareTo("Zoo", "zoo"));
         //     System.out.println(hashCode(arr1));
         //     System.out.println(hashCode(arr2));
+
+        char[] empty_arr = {};
+        char[] arr1 = "I am the ".toCharArray();
+        char[] arr2 = "eggman".toCharArray();
+        char[] arr3 = "walrus".toCharArray();
+
+        System.out.println(concat(arr1, arr2));
+        System.out.println(concat(arr1, arr3));
+        System.out.println(concat(empty_arr, arr3));
+        // boolean test2 = ArrCharOps.equals(ArrCharOps., "I am the walrus".toCharArray());
+        // boolean test3 = ArrCharOps.equals(ArrCharOps., arr3);
+
     }
 
     /**
@@ -133,9 +142,9 @@ public class ArrCharOps {
                 concatArr[i] = arr1[i];
                 //System.out.println(concatArr[i]);
             }
-            if (i == arr1.length) {
-                concatArr[i] = ' ';
-            }
+            // if (i == arr1.length) {
+            //     concatArr[i] = ' ';
+            // }
             if (i > arr1.length) {
                 concatArr[i] = arr2[j];
                 //System.out.println(concatArr[i]);
