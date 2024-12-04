@@ -16,7 +16,7 @@ public class ArrCharOps {
         // System.out.println(indexOf(arr1, 'l'));
         // System.out.println(indexOf(arr1, 'l', 3));
         // System.out.println(lastIndexOf(arr1, 'l'));
-        System.out.println(concat(arr1, arr2));
+        // System.out.println(concat(arr1, arr2));
         // System.out.println(subArray(arr2, 2, 9));
         System.out.println(compareTo("abcd", "abcd")); //0 V
         System.out.println(compareTo("abc", "abcd")); //-1 V
@@ -49,15 +49,6 @@ public class ArrCharOps {
             return '-';
         }
         return arr[index];
-        // if we can't use charAt..
-        // int i = 0;
-        // while (i < arr.length) {
-        //     if (i == index) {
-        //         return arr[i];
-        //     }
-        //     i++;
-        // }
-        // return arr[i];
     }
 
     /**
@@ -134,14 +125,11 @@ public class ArrCharOps {
         for (int i = 0; i < concatArr.length; i++) {
             if (i < arr1.length) {
                 concatArr[i] = arr1[i];
-            }
-            if (i > arr1.length) {
+            } else if (i > arr1.length) {
                 concatArr[i] = arr2[j];
                 j++;
             }
         }
-        //System.out.println(concatArr);
-
         return concatArr;
     }
 
