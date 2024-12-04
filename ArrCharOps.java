@@ -7,30 +7,26 @@ public class ArrCharOps {
 
     public static void main(String[] args) {
         // String str = "clearly";
-        // char[] arr1 = {'c', 'l', 'e', 'a', 'r', 'l', 'y'};
-        // char[] arr2 = {'U', 'n', 'd', 'e', 'r', 's', 't', 'o', 'o', 'd'};
+        char[] arr1 = {'c', 'l', 'e', 'a', 'r', 'l', 'y'};
+        char[] arr2 = {'U', 'n', 'd', 'e', 'r', 's', 't', 'o', 'o', 'd'};
         // System.out.println(str); // Prints the string
         // println(arr1); // Prints an array of characters
         // System.out.println(charAt(arr1, 2));
-
         // System.out.println(equals(arr1, arr1));
         // System.out.println(indexOf(arr1, 'l'));
         // System.out.println(indexOf(arr1, 'l', 3));
         // System.out.println(lastIndexOf(arr1, 'l'));
-        //System.out.println(concat(arr1, arr2));
+        System.out.println(concat(arr1, arr2));
         // System.out.println(subArray(arr2, 2, 9));
         System.out.println(compareTo("abcd", "abcd")); //0 V
         System.out.println(compareTo("abc", "abcd")); //-1 V
-        System.out.println(compareTo("abw", "abcd")); // 1 V
+        System.out.println(compareTo("abw", "abcd")); // 1 
         System.out.println(compareTo("Abcd", "a")); // -1 V
         System.out.println(compareTo("apple", "banana")); //-1 V
         System.out.println(compareTo("apple", "applepie")); //-1 V
-        System.out.println(compareTo("Zoo", "zoo")); //1 V
+        System.out.println(compareTo("Zoo", "zoo")); // -1 V
         //     System.out.println(hashCode(arr1));
         //     System.out.println(hashCode(arr2));
-        System.out.println(compareTo("abc", "abc")); // 0  V
-        System.out.println(compareTo("abc", "aBc")); // 1 
-        System.out.println(compareTo("abc", "abcd")); //-1 V
 
     }
 
@@ -129,7 +125,7 @@ public class ArrCharOps {
     /* Returns an array which is the concatanation of the two given arrays.
      */
     public static char[] concat(char[] arr1, char[] arr2) {
-        char[] concatArr = new char[arr1.length + arr2.length + 1];
+        char[] concatArr = new char[arr1.length + arr2.length];
         int j = 0;
         for (int i = 0; i < concatArr.length; i++) {
             if (i < arr1.length) {
@@ -211,17 +207,17 @@ public class ArrCharOps {
      * there is an error with the input.
      */
     public static int compareTo(String str1, String str2) {
+        if (str1.length() == 0 || str2.length() == 0) {
+            return -2;
+        }
         int result = 0;
         if (str1.length() == str2.length()) { //if the length is equal
             for (int i = 0; i < str1.length(); i++) {
                 if (str1.charAt(i) == str2.charAt(i)) { //if all the chars are the same
                     result = 0;
-                } else if (str1.charAt(i) < str2.charAt(i)) { // if the str1(i) place bigger than the str2(i) place. than str1 comes first
-                    System.out.println(str1.charAt(i) + " " + str2.charAt(i));
-                    return 1;
-                } else if (str1.charAt(i) > str2.charAt(i)) {
-                    System.out.println(str1.charAt(i) + " " + str2.charAt(i));
-                    return -1; //else str2 comes first
+                }
+                if (str1.charAt(i) != str2.charAt(i)) { // return -1 if str1 comes first and 1if str2 comes first
+                    return (str1.charAt(i) < str2.charAt(i) ? -1 : 1);
                 }
             }
             return result;
@@ -230,15 +226,17 @@ public class ArrCharOps {
         // if str1 and str2 
         if (str1.length() != str2.length()) {
             for (int i = 0; i < str1.length(); i++) {
-                if ((str1.charAt(i) == str2.charAt(i)) && (i + 1 == str1.length() && i < str2.length())) {
+                if ((str1.charAt(i) == str2.charAt(i))) {
+                    result = 0;
+                } else if (str1.charAt(i) != str2.charAt(i)) {
+                    return (str1.charAt(i) < str2.charAt(i) ? -1 : 1);
+                }
+                if (i + 1 == str1.length() && i < str2.length()) {
                     return -1;
-                } else if (str1.charAt(i) < str2.charAt(i)) {
-                    return -1;
-                } else if (str1.charAt(i) > str2.charAt(i)) {
-                    return 1;
                 }
             }
+            return result;
         }
-        return -2;
+        return 0;
     }
 }
