@@ -27,7 +27,6 @@ public class ArrCharOps {
         System.out.println(compareTo("Zoo", "zoo")); // -1 V
         //     System.out.println(hashCode(arr1));
         //     System.out.println(hashCode(arr2));
-
     }
 
     /**
@@ -125,23 +124,18 @@ public class ArrCharOps {
     /* Returns an array which is the concatanation of the two given arrays.
      */
     public static char[] concat(char[] arr1, char[] arr2) {
-        char[] concatArr = new char[arr1.length + arr2.length];
+        char[] concatArr = new char[arr1.length + arr2.length + 1];
         int j = 0;
         for (int i = 0; i < concatArr.length; i++) {
             if (i < arr1.length) {
                 concatArr[i] = arr1[i];
-                //System.out.println(concatArr[i]);
             }
-            // if (i == arr1.length) {
-            //     concatArr[i] = ' ';
-            // }
             if (i > arr1.length) {
                 concatArr[i] = arr2[j];
-                //System.out.println(concatArr[i]);
                 j++;
             }
         }
-        //System.out.println(concatArr);
+        System.out.println(concatArr);
 
         return concatArr;
     }
