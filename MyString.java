@@ -17,10 +17,10 @@ public class MyString {
         // System.out.println(contains("personality", "dad")); // false
         // System.out.println(contains("resignation", "sign")); // true      
 
-        // System.out.println(contains("baba yaga", "baba"));
-        // System.out.println(contains("baba yaga", ""));
-        // System.out.println(contains("baba yaga", "John Wick is the baba yaga"));
-        // System.out.println(contains("baba yaga", "Yaga"));
+        System.out.println(contains("baba yaga", "baba"));
+        System.out.println(contains("baba yaga", ""));
+        System.out.println(contains("baba yaga", "John Wick is the baba yaga"));
+        System.out.println(contains("baba yaga", "Yaga"));
         System.out.println(contains("baba yaga", "babayaga"));
     }
 
@@ -59,15 +59,14 @@ public class MyString {
                 subStr += str2.charAt(index);
                 if (index + 1 < str2.length()) {
                     index++;
-                } // else {
-                //     System.out.println(subStr);
-                // }
-                else if (str1.charAt(i) != str2.charAt(index)) {
+                } else if (str1.charAt(i) != str2.charAt(index)) {
                     System.out.println(str1.charAt(i) + ", " + str2.charAt(index));
                     return false;
                 } else {
                     break;
                 }
+            } else if (str1.charAt(i) != str2.charAt(index)) {
+                return false;
             }
         }
         return (str2.equals(subStr));
