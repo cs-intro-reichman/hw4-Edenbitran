@@ -12,8 +12,8 @@ public class Primes {
             // System.out.printf("%8s", bool[i]);
         }
         //System.out.println();
-        for (int i = 2; i <= bool.length; i++) {
-            while (i % j == 0 && i > j) {
+        for (int i = 1; i < bool.length; i++) {
+            while ((i + 1) % j == 0 && i > j) {
                 bool[i] = false;
                 //System.out.println(bool[i]);
                 break;
@@ -25,7 +25,7 @@ public class Primes {
         }
 
         double countP = 0;
-        for (int i = 0; i < bool.length; i++) {
+        for (int i = 2; i < bool.length; i++) {
             // System.out.printf("%8s", bool[i]);
             if (bool[i] == true) {
                 countP++;
