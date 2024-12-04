@@ -4,12 +4,13 @@ public class Primes {
     public static void main(String[] args) {
         int lim = Integer.parseInt(args[0]);
         int j = 2;
-        boolean[] bool = new boolean[lim + 1];
+        boolean[] bool = new boolean[lim];
         for (int i = 0; i < bool.length; i++) { // if the index>1 it is true
-            if (i > 1) {
+            if ((i + 1) > 1) {
                 bool[i] = true;
             }
             // System.out.printf("%8s", bool[i]);
+            // System.out.println(i + 1); // count 1-7
         }
         //System.out.println();
         for (int i = 1; i < bool.length; i++) {
@@ -25,10 +26,11 @@ public class Primes {
         }
 
         double countP = 0;
-        for (int i = 2; i < bool.length; i++) {
-            // System.out.printf("%8s", bool[i]);
+        for (int i = 0; i < bool.length; i++) {
+            //System.out.printf("%8s", bool[i]);
             if (bool[i] == true) {
                 countP++;
+                System.out.println(i + 1);
             }
         }
 
