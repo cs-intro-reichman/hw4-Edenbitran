@@ -124,6 +124,11 @@ public class ArrCharOps {
     /* Returns an array which is the concatanation of the two given arrays.
      */
     public static char[] concat(char[] arr1, char[] arr2) {
+        if (arr1.length == 0) {
+            return arr2;
+        } else if (arr2.length == 0) {
+            return arr1;
+        }
         char[] concatArr = new char[arr1.length + arr2.length + 1];
         int j = 0;
         for (int i = 0; i < concatArr.length; i++) {
@@ -135,7 +140,7 @@ public class ArrCharOps {
                 j++;
             }
         }
-        System.out.println(concatArr);
+        //System.out.println(concatArr);
 
         return concatArr;
     }
